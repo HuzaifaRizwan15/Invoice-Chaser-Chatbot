@@ -1,20 +1,3 @@
-"""
-InvoiceChaser - an AI assistant that writes overdue invoice payment reminders.
-
-Backend only (no UI). Run it in Google Colab or in a normal terminal.
-
-How it works:
-  1. Python asks you for the invoice details (one question at a time).
-  2. Python calculates the days overdue and suggests a tone.
-  3. The AI writes the reminder using ONLY those details.
-  4. You can chat to edit it: "make it shorter", "change to Firm", etc.
-
-Setup:
-  Colab  -> run  !pip install groq python-dotenv  in a cell first. Key is read
-            from the Colab secret named GKey (same as your practice notebook).
-  Local  -> install requirements, add GROQ_API_KEY to .env, then run this file.
-"""
-
 import os
 from datetime import date, datetime
 
