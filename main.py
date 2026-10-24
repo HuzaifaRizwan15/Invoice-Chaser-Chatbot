@@ -10,33 +10,17 @@ load_dotenv()
 # 1. SETUP  
 
 def get_api_key():
-    """Get the Groq key from the environment, .env file, or Colab secrets."""
+    
     key = os.environ.get("GROQ_API_KEY")
-    # if key:
-    #     return key
-
-    # try:
-    #     from google.colab import userdata
-    # except ImportError:
-    #     raise ValueError(
-    #         "No API key found. Add GROQ_API_KEY to your .env file "
-    #         "or set the GROQ_API_KEY environment variable."
-    #     ) from None
-
-    # key = userdata.get("GKey")
-    # if not key:
-    #     raise ValueError("No API key found. Add the GKey secret in Google Colab.")
     return key
 
 
 MODEL = "openai/gpt-oss-120b"
 
-# How many recent chat messages to send to the model (keep this number EVEN).
 MAX_MESSAGES = 8
 
 TONES = ["Friendly", "Professional", "Firm", "Final Notice"]
 
-# Words the user can type to choose a tone.
 TONE_ALIASES = {
     "1": "Friendly", "friendly": "Friendly",
     "2": "Professional", "professional": "Professional",
@@ -44,10 +28,8 @@ TONE_ALIASES = {
     "4": "Final Notice", "final": "Final Notice", "final notice": "Final Notice",
 }
 
-# Date formats we accept. Note: 05/10/2026 means 5 October 2026 (day first).
 DATE_FORMATS = ["%Y-%m-%d", "%d-%m-%Y", "%d/%m/%Y"]
 
-# The invoice fields, in the order we ask for them: (key, label).
 FIELDS = [
     ("client_name", "Client name"),
     ("invoice_number", "Invoice number"),
